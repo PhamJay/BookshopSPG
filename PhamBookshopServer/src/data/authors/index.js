@@ -5,7 +5,7 @@
 const utils = require( "../utils" );
 var FuzzySearch = require('fuzzy-search');
 
-const register = async ( { sql, getConnection } ) => {
+const registerAuthors = async ( { sql, getConnection } ) => {
     // read in all the .sql files for this folder
     const sqlQueries = await utils.loadSqlQueries( "authors" );
 
@@ -31,7 +31,7 @@ const register = async ( { sql, getConnection } ) => {
         const cnx = await getConnection();
         const request = await cnx.request();
         const authors =  await request.query( sqlQueries.getAuthors );
- 
+
         const searcher = new FuzzySearch(authors.recordset, ["firstname", "familyname"], {sort: true})
         const result = searcher.search(name)
         return result;
@@ -73,4 +73,4 @@ const register = async ( { sql, getConnection } ) => {
     };
 };
 
-module.exports = { register };
+module.exports = { registerAuthors };

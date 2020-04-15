@@ -3,56 +3,31 @@
 module.exports.register = async server => {
 
     // Get All Authors
+    // ID = * || Get Authors by ID
+    // Name = * || Fuzzy-Search all authors by name (first and last), and return the best match
     server.route( {
         method: "GET",
         path: "/api/authors",
         config: {
             handler: async request => {
                 try {
-                    // get the sql client registered as a plugin
                     const db = request.server.plugins.sql.client;
 
-                    // execute the query
-                    const res = await db.authors.getAuthors();
+                    if(request.query.id){
+                      const id = request.query.id;
+                      const res = await db.authors.getAuthorById( id );
+                      return res.recordset;
+                    }
+                    else if(request.query.name){
+                      const name = request.query.name;
+                      const res = await db.authors.searchAuthorByName( name );
+                      return res;
+                    }
+                    else {
+                      const res = await db.authors.getAuthors();
+                      return res.recordset;
+                    }
 
-                    // return the recordset object
-                    return res.recordset;
-                } catch ( err ) {
-                    console.log( err );
-                }
-            }
-        }
-    } );
-
-    //Get Author by ID
-    server.route( {
-        method: "GET",
-        path: "/api/authors/{id}",
-        config: {
-            handler: async request => {
-                try {
-                    const id = request.params.id;
-                    const db = request.server.plugins.sql.client;
-                    const res = await db.authors.getAuthorById( id );
-                    return res.recordset;
-                } catch ( err ) {
-                    console.log( err );
-                }
-            }
-        }
-    } );
-
-    //Fuzzy-Search all authors by name (first and last), and return the best match
-    server.route( {
-        method: "GET",
-        path: "/api/authors/name/{name}",
-        config: {
-            handler: async request => {
-                try {
-                    const name = request.params.name;
-                    const db = request.server.plugins.sql.client;
-                    const res = await db.authors.searchAuthorByName( name );
-                    return res;
                 } catch ( err ) {
                     console.log( err );
                 }
@@ -61,7 +36,7 @@ module.exports.register = async server => {
     } );
 
     //Add Author
-
+    //Edit Author
     server.route( {
         method: "POST",
         path: "/api/authors",
@@ -69,29 +44,18 @@ module.exports.register = async server => {
             handler: async request => {
                 try {
                     const db = request.server.plugins.sql.client;
-                    const { autnr, firstname, familyname } = request.payload;
-                    const res = await db.authors.addAuthor( { autnr, firstname, familyname } );
-                    return res.recordset;
-                } catch ( err ) {
-                    console.log(err);
-                }
-            }
-        }
-    } );
 
-    //Edit Author
-
-    server.route( {
-        method: "POST",
-        path: "/api/authors/{id}",
-        config: {
-            handler: async request => {
-                try {
-                    const id = request.params.id;
-                    const db = request.server.plugins.sql.client;
-                    const { firstname, familyname } = request.payload;
-                    const res = await db.authors.updateAuthor( { id, firstname, familyname } );
-                    return res.recordset;
+                    if(request.query.id) {
+                      const id = request.query.id;
+                      const { firstname, familyname } = request.payload;
+                      const res = await db.authors.updateAuthor( { id, firstname, familyname } );
+                      return res.recordset;
+                    }
+                    else {
+                      const {autnr, firstname, familyname} = request.payload;
+                      const res = await db.authors.addAuthor({autnr, firstname, familyname});
+                      return res.recordset;
+                    }
                 } catch ( err ) {
                     console.log(err);
                 }
@@ -100,7 +64,6 @@ module.exports.register = async server => {
     } );
 
     //Delete Author
-
     server.route( {
         method: "DELETE",
         path: "/api/authors/{id}",

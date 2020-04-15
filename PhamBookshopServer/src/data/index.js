@@ -3,6 +3,7 @@
 // Sets up the MSSQL connection
 
 const authors = require( "./authors" );
+const books = require( "./books" );
 const sql = require( "mssql" );
 
 const client = async ( server, config ) => {
@@ -54,7 +55,8 @@ const client = async ( server, config ) => {
     // this is the API the client exposes to the rest
     // of the application
     return {
-        authors: await authors.register( { sql, getConnection } )
+        authors: await authors.registerAuthors( { sql, getConnection } ),
+        books: await books.registerBooks( { sql, getConnection } )
     };
 };
 
