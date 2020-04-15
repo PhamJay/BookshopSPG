@@ -1,0 +1,26 @@
+<mat-card>
+  <div class="table-container mat-elevation-z8">
+      <mat-table mat-table [dataSource]="dataSource" class="author-table">
+
+        <ng-container matColumnDef="autnr">
+          <mat-header-cell mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+          <mat-cell *matCellDef="let author">{{author.autnr}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="firstname">
+          <mat-header-cell mat-header-cell *matHeaderCellDef>Firstname</mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let author">{{author.firstname}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="familyname">
+          <mat-header-cell *matHeaderCellDef>Familyname</mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let author">{{author.familyname}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+
+</mat-card>
+
