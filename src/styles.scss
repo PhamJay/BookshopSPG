@@ -1,11 +1,4 @@
-@import '~@angular/material/theming';
-@include mat-core();
-
-$PhamBookshop-primary: mat-palette($mat-orange, 800, 600, 900);
-$PhamBookshop-accent: mat-palette($mat-blue, 500, 300, 800);
-$PhamBookshop-warn: mat-palette($mat-red);
-$PhamBookshop-theme: mat-light-theme($PhamBookshop-primary, $PhamBookshop-accent, $PhamBookshop-warn);
-@include angular-material-theme($PhamBookshop-theme);
+@import "themes";
 
 html, body { height: 100%; }
 body {
@@ -13,8 +6,18 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.pageBody {
-  display: grid;
-  padding: 1vh;
+.clickable{
+  color: $primary!important;
+  &:hover{
+    color: $accent!important;
+    transition: 350ms;
+  }
 }
+
+.mat-toolbar button{
+  background-color: $light-grey!important;
+}
+
+
+
 

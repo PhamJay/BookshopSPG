@@ -4,10 +4,10 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import {merge, Observable, of} from 'rxjs';
-import {AuthorService} from '../services/author.service';
-import {Author} from '../models/author';
+import {AuthorService} from '../../services/author.service';
+import {Author} from '../../models/author';
 import {DataSource} from '@angular/cdk/collections';
-import {AuthorDataSource} from '../datasources/author-data-source.service';
+import {AuthorDataSource} from '../../datasources/author-data-source.service';
 
 @Component({
   selector: 'app-all-authors',
@@ -23,6 +23,10 @@ export class AllAuthorsComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  onRowClicked(row) {
+    console.log('Row clicked: ', row);
   }
 }
 

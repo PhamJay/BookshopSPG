@@ -1,13 +1,18 @@
-<mat-toolbar color = "primary" id="MainHeader">
-    <button mat-flat-button color = accent routerLink="/">Jay's Bookshop</button>
-    <button mat-flat-button color = accent routerLink="/authors/all">List all Authors</button>
+<mat-toolbar color = primary id="MainHeader">
+    <button class="clickable" mat-stroked-button routerLink="/">Jay's Bookshop</button>
 </mat-toolbar>
 
-<div class="pageBody">
-
-  <router-outlet></router-outlet>
-
-</div>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" role="navigation" opened>
+    <mat-nav-list>
+      <a mat-list-item class="clickable" routerLink="/books/all">Books</a>
+      <a mat-list-item class="clickable" routerLink="/authors/all">Authors</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 
 
