@@ -19,6 +19,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { OktaAuthModule } from '@okta/okta-angular';
 import { LoginComponent } from './components/login/login.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { LoginComponent } from './components/login/login.component';
       issuer: 'https://dev-589202.okta.com/oauth2/default',
       redirectUri: 'http://localhost:4200/implicit/callback',
       clientId: '0oa9777ceBCXDcOqC4x6'
-    })
+    }),
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
-<mat-toolbar color = primary id="MainHeader">
-  <button class="clickable" mat-stroked-button routerLink="/">Jay's Bookshop</button>
+<mat-toolbar color = primary id="header">
+  <button mat-stroked-button routerLink="/">Jay's Bookshop</button>
   <div>
-    <button mat-button *ngIf="!isAuthenticated" routerLink="/login"> Login </button>
-    <button mat-button *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
+    <button mat-stroked-button *ngIf="!isAuthenticated" routerLink="/login"> Login </button>
+    <button mat-stroked-button *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
   </div>
 </mat-toolbar>
 

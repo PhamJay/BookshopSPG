@@ -6,11 +6,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.clickable{
+button, .mat-list-item{
   color: $primary!important;
   &:hover{
     color: $accent!important;
-    transition: 350ms;
+    transition: 350ms!important;
   }
 }
 

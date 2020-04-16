@@ -1,9 +1,12 @@
-<mat-grid-list cols = 4 gutterSize="5vh">
+<mat-grid-list cols = 4 gutterSize="5%">
   <h1>Books</h1>
   <mat-grid-tile *ngFor="let book of books | async">
-    <img mat-card-image src="../../../assets/jpg/bookCover.jpg" alt="Book Cover">
+    <img src="../../../assets/jpg/bookCover.jpg" alt="Book Cover">
     <mat-grid-tile-header><span>{{book.title}}</span></mat-grid-tile-header>
-    <mat-grid-tile-footer>{{book.price}}€</mat-grid-tile-footer>
+    <mat-grid-tile-footer>
+      <a>{{book.price}}€</a>
+      <button mat-icon-button ><mat-icon>add_shopping_cart</mat-icon></button>
+    </mat-grid-tile-footer>
 
   </mat-grid-tile>
 </mat-grid-list>
