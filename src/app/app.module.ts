@@ -17,13 +17,16 @@ import { BookCardsComponent } from './components/book-cards/book-cards.component
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { OktaAuthModule } from '@okta/okta-angular';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllAuthorsComponent,
     HomeComponent,
-    BookCardsComponent
+    BookCardsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,12 @@ import {MatListModule} from '@angular/material/list';
     MatButtonModule,
     MatGridListModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    OktaAuthModule.initAuth({
+      issuer: 'https://dev-589202.okta.com/oauth2/default',
+      redirectUri: 'http://localhost:4200/implicit/callback',
+      clientId: '0oa9777ceBCXDcOqC4x6'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

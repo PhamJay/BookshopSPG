@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {AllAuthorsComponent} from './components/all-authors/all-authors.component';
 import {HomeComponent} from './components/home/home.component';
 import {BookCardsComponent} from './components/book-cards/book-cards.component';
+import { OktaCallbackComponent, OktaAuthGuard } from '@okta/okta-angular';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'authors/all', component: AllAuthorsComponent},
+  { path: 'implicit/callback', component: OktaCallbackComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'authors/all', component: AllAuthorsComponent, canActivate: [ OktaAuthGuard ], data: { onAuthRequired }},
   { path: 'books/all', component: BookCardsComponent}
 ];
 
@@ -16,3 +20,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export function onAuthRequired({ oktaAuth, router }) {
+  router.navigate(['/login']);
+}

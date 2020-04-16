@@ -2,7 +2,7 @@
 
 //Sets up the Hapi Server
 
-const Hapi = require( "hapi" );
+const Hapi = require( "@hapi/hapi" );
 const plugins = require( "./plugins" );
 const routes = require( "./routes" );
 
