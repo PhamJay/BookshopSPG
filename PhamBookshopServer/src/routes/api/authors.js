@@ -9,10 +9,6 @@ module.exports.register = async server => {
         method: "GET",
         path: "/api/authors",
         config: {
-            auth: {
-                strategy: "session",
-                mode: "required"
-            },
             handler: async request => {
                 try {
                     const db = request.server.plugins.sql.client;
@@ -45,10 +41,6 @@ module.exports.register = async server => {
         method: "POST",
         path: "/api/authors",
         config: {
-            auth: {
-                strategy: "session",
-                mode: "required"
-            },
             handler: async request => {
                 try {
                     const db = request.server.plugins.sql.client;
@@ -76,10 +68,6 @@ module.exports.register = async server => {
         method: "DELETE",
         path: "/api/authors/{id}",
         config: {
-            auth: {
-                strategy: "session",
-                mode: "required"
-            },
             handler: async request => {
                 try {
                     const db = request.server.plugins.sql.client;
