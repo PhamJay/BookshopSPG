@@ -20,6 +20,9 @@ import {MatListModule} from '@angular/material/list';
 import { OktaAuthModule } from '@okta/okta-angular';
 import { LoginComponent } from './components/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MatIconModule} from '@angular/material/icon';
     AllAuthorsComponent,
     HomeComponent,
     BookCardsComponent,
-    LoginComponent
+    LoginComponent,
+    UnauthorizedComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import {MatIconModule} from '@angular/material/icon';
       redirectUri: 'http://localhost:4200/implicit/callback',
       clientId: '0oa9777ceBCXDcOqC4x6'
     }),
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
