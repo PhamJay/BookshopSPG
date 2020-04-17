@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, Injectable, Input, OnInit, Optional} from '@angular/core';
 import {BookService} from '../../services/book.service';
 import {BookDataSource} from '../../datasources/book-data-source.service';
 
@@ -11,6 +11,7 @@ export class BookCardsComponent implements OnInit {
 
   dataSource = new BookDataSource(this.bookService);
   books = this.dataSource.connect();
+
   constructor(private bookService: BookService) {
   }
 

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AppGuard } from './app.guard';
+import { OktaAuthGuard } from './app.guard';
 
-describe('AppGuard', () => {
-  let guard: AppGuard;
+describe('OktaAuthGuard', () => {
+  let guard: OktaAuthGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(AppGuard);
+    guard = TestBed.inject(OktaAuthGuard);
   });
 
   it('should be created', () => {

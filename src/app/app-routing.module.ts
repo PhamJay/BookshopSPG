@@ -3,8 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import {AllAuthorsComponent} from './components/all-authors/all-authors.component';
 import {HomeComponent} from './components/home/home.component';
 import {BookCardsComponent} from './components/book-cards/book-cards.component';
-import { OktaCallbackComponent, OktaAuthGuard } from '@okta/okta-angular';
+import { OktaAuthGuard } from './app.guard';
+import {OktaCallbackComponent} from '@okta/okta-angular';
 import { LoginComponent } from './components/login/login.component';
+
 
 
 const routes: Routes = [

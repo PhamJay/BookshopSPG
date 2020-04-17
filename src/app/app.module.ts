@@ -23,6 +23,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import { AuthorComponent } from './components/author/author.component';
+import { AuthorizedComponent } from './components/authorized/authorized.component';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomeComponent,
     BookCardsComponent,
     LoginComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    AuthorComponent,
+    AuthorizedComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     }),
     MatIconModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
