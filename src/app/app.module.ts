@@ -11,7 +11,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
 import {MatButtonModule} from '@angular/material/button';
 import { BookCardsComponent } from './components/book-cards/book-cards.component';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -26,17 +25,18 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AuthorComponent } from './components/author/author.component';
 import { AuthorizedComponent } from './components/authorized/authorized.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllAuthorsComponent,
-    HomeComponent,
     BookCardsComponent,
     LoginComponent,
     UnauthorizedComponent,
     AuthorComponent,
-    AuthorizedComponent
+    AuthorizedComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
