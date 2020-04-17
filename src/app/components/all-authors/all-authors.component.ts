@@ -8,6 +8,7 @@ import {AuthorService} from '../../services/author.service';
 import {Author} from '../../models/author';
 import {DataSource} from '@angular/cdk/collections';
 import {AuthorDataSource} from '../../datasources/author-data-source.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-all-authors',
@@ -18,7 +19,7 @@ export class AllAuthorsComponent implements OnInit {
 
   displayedColumns: string[] = ['autnr', 'firstname', 'familyname'];
   dataSource = new AuthorDataSource(this.authorService);
-  constructor(private authorService: AuthorService) {
+  constructor(private authorService: AuthorService, private router: Router) {
   }
 
   ngOnInit() {
@@ -27,6 +28,7 @@ export class AllAuthorsComponent implements OnInit {
 
   onRowClicked(row) {
     console.log('Row clicked: ', row);
+    this.router.navigate(['/authors/author'], { queryParams: { autnr: row.autnr.toString()}});
   }
 }
 
