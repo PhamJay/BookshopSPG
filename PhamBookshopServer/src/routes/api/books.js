@@ -32,4 +32,24 @@ module.exports.register = async server => {
       }
     }
   } );
+
+  //Edit Book
+  server.route( {
+    method: "POST",
+    path: "/api/books",
+    config: {
+      handler: async request => {
+        try {
+          const db = request.server.plugins.sql.client;
+          const isbn = request.query.isbn;
+          const { autnr, title, price } = request.payload;
+          const res = await db.books.updateBook( { isbn, autnr, title, price } );
+          return res.recordset;
+        } catch ( err ) {
+          console.log(err);
+        }
+      }
+    }
+  } );
+
 };

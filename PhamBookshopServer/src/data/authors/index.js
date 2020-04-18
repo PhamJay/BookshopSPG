@@ -37,10 +37,10 @@ const registerAuthors = async ( { sql, getConnection } ) => {
         return result;
     }
 
-    const updateAuthor = async ( { id, firstname, familyname } ) => {
+    const updateAuthor = async ( { autnr, firstname, familyname } ) => {
         const cnx = await getConnection();
         const request = await cnx.request();
-        request.input( "autnr", sql.Int, id)
+        request.input( "autnr", sql.Int, autnr);
         request.input( "firstname", sql.VarChar( 255 ), firstname );
         request.input( "familyname", sql.VarChar( 255 ), familyname );
         return request.query( sqlQueries.updateAuthor );
@@ -49,7 +49,7 @@ const registerAuthors = async ( { sql, getConnection } ) => {
     const addAuthor = async ( { autnr, firstname, familyname } ) => {
         const cnx = await getConnection();
         const request = await cnx.request();
-        request.input( "autnr", sql.Int, autnr)
+        request.input( "autnr", sql.Int, autnr);
         request.input( "firstname", sql.VarChar( 255 ), firstname );
         request.input( "familyname", sql.VarChar( 255 ), familyname );
         return request.query( sqlQueries.addAuthor );

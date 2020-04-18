@@ -6,16 +6,31 @@ This hapi server exposes REST-Endpoints for a bookshop. Primary technologies use
 * Node.js / Express
 * npm hapi
 
+## Endpoints
+
 The following endpoints are implemented:
 
+### Authors
+
 * GET all Authors **api/authors**
-* GET author by ID **api/authors/{id}**
-* GET most-fitting fuzzy-search results for Author by Name (First or Last) **api/authors/name/{name}**
+* GET author by ID **api/authors?id={id}**
+* GET most-fitting fuzzy-search results for Author by Name (First or Last) **api/authors/name?name={name}**
 * POST: Add Author **api/authors**
-* POST: Update Author **api/authors/{id}**
+* POST: Update Author **api/authors?id={id}**
 * DELETE author **api/authors/{id}**
 
+### Books
+
+* GET all Books **api/books**
+* GET book by ISBN **api/books?id={isbn}**
+* GET all books of an author, by autnr **api/books?autnr={autnr}**
+* POST: Update Book **api/books**?isbn={isbn}
+
+Note: For POST-Update-Statements, ALL attributes except the primary key have to be sent in the request-body via json. 
+
 ## Setup
+
+
 
 You will need to host a MSSQL Database, execute the script found in `BookshopMSSQL.sql`, and then create an file called `.env` for configuring the hapi server and database connection. Create this file in the root-dirctory of PhamBookshopServer.
 

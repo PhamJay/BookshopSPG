@@ -33,10 +33,21 @@ const registerBooks = async ( { sql, getConnection } ) => {
     return request.query( sqlQueries.getBookByAutnr );
   }
 
+  const updateBook = async ( {isbn, autnr, title, price} ) => {
+    const cnx = await getConnection();
+    const request = await cnx.request();
+    request.input( "isbn", sql.Char(20), isbn);
+    request.input( "autnr", sql.Int, autnr);
+    request.input( "title", sql.VarChar(255), title);
+    request.input( "price", sql.Float, price);
+    return request.query( sqlQueries.updateBook );
+  };
+
   return {
     getBooks,
     getBookById,
-    getBookByAutnr
+    getBookByAutnr,
+    updateBook
   };
 };
 
