@@ -7,16 +7,18 @@ import {OktaCallbackComponent} from '@okta/okta-angular';
 import { LoginComponent } from './components/login/login.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {AuthorComponent} from './components/author/author.component';
+import {AdminComponent} from './components/admin/admin.component';
 
 
 
 const routes: Routes = [
   { path: '', component: BookCardsComponent},
   { path: 'implicit/callback', component: OktaCallbackComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [ OktaAuthGuard ], data: { onAuthRequired }},
   { path: 'login', component: LoginComponent },
-  { path: 'authors', component: AllAuthorsComponent, canActivate: [ OktaAuthGuard ], data: { onAuthRequired }},
-  { path: 'authors/author', component: AuthorComponent},
-  { path: '**', component: PageNotFoundComponent}
+  { path: 'authors', component: AllAuthorsComponent },
+  { path: 'authors/author', component: AuthorComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

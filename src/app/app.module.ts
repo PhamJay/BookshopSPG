@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,12 @@ import { AuthorComponent } from './components/author/author.component';
 import { AuthorizedComponent } from './components/authorized/authorized.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AdminComponent } from './components/admin/admin.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { SatPopoverModule } from '@ncstate/sat-popover';
+import { EditComponent } from './components/edit/edit.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     UnauthorizedComponent,
     AuthorComponent,
     AuthorizedComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AdminComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatIconModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule,
+    SatPopoverModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

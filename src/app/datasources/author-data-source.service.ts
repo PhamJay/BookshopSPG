@@ -16,6 +16,10 @@ export class AuthorDataSource extends DataSource<any> {
     return this.authorService.getAuthors();
   }
 
+  update(author: Author) {
+    this.authorService.updateAuthor(author);
+  }
+
   disconnect() {
   }
 }

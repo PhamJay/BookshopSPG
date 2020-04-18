@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "@ncstate/sat-popover": "^4.0.0",
     "@okta/okta-angular": "^1.0.7",
     "@okta/okta-signin-widget": "^2.14.0",
     "rxjs": "~6.5.4",
