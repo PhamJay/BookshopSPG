@@ -6,33 +6,34 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
-import { AllAuthorsComponent } from './components/all-authors/all-authors.component';
+import { AllAuthorsComponent } from './components/userComponents/all-authors/all-authors.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
-import { BookCardsComponent } from './components/book-cards/book-cards.component';
+import { BookCardsComponent } from './components/userComponents/book-cards/book-cards.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { OktaAuthModule } from '@okta/okta-angular';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/userComponents/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
-import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { UnauthorizedComponent } from './components/popups/unauthorized/unauthorized.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
-import { AuthorComponent } from './components/author/author.component';
-import { AuthorizedComponent } from './components/authorized/authorized.component';
+import { AuthorComponent } from './components/userComponents/author/author.component';
+import { AuthorizedComponent } from './components/popups/authorized/authorized.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { PageNotFoundComponent } from './components/userComponents/page-not-found/page-not-found.component';
+import { AdminComponent } from './components/adminComponents/admin/admin.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { SatPopoverModule } from '@ncstate/sat-popover';
-import { EditComponent } from './components/edit/edit.component';
+import { EditComponent } from './components/popups/edit/edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { AllAuthorsEditableComponent } from './components/all-authors-editable/all-authors-editable.component';
+import { AllAuthorsEditableComponent } from './components/adminComponents/all-authors-editable/all-authors-editable.component';
+import { AllBooksEditableComponent } from './components/adminComponents/all-books-editable/all-books-editable.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AllAuthorsEditableComponent } from './components/all-authors-editable/a
     PageNotFoundComponent,
     AdminComponent,
     EditComponent,
-    AllAuthorsEditableComponent
+    AllAuthorsEditableComponent,
+    AllBooksEditableComponent
   ],
   imports: [
     BrowserModule,

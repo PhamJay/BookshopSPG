@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthorDataSource} from '../../datasources/author-data-source.service';
-import {AuthorService} from '../../services/author.service';
+import {AuthorDataSource} from '../../../datasources/author-data-source.service';
+import {AuthorService} from '../../../services/author.service';
 import {Router} from '@angular/router';
-import {Author} from '../../models/author';
+import {Author} from '../../../models/author';
 
 @Component({
   selector: 'app-admin',

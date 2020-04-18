@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AllAuthorsComponent} from './components/all-authors/all-authors.component';
-import {BookCardsComponent} from './components/book-cards/book-cards.component';
+import {AllAuthorsComponent} from './components/userComponents/all-authors/all-authors.component';
+import {BookCardsComponent} from './components/userComponents/book-cards/book-cards.component';
 import { OktaAuthGuard } from './app.guard';
 import {OktaCallbackComponent} from '@okta/okta-angular';
-import { LoginComponent } from './components/login/login.component';
-import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
-import {AuthorComponent} from './components/author/author.component';
-import {AdminComponent} from './components/admin/admin.component';
+import { LoginComponent } from './components/userComponents/login/login.component';
+import {PageNotFoundComponent} from './components/userComponents/page-not-found/page-not-found.component';
+import {AuthorComponent} from './components/userComponents/author/author.component';
+import {AdminComponent} from './components/adminComponents/admin/admin.component';
 
 
 

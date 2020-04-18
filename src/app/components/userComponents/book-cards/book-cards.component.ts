@@ -1,10 +1,10 @@
 import {Component, Inject, Injectable, Input, OnInit, Optional} from '@angular/core';
-import {BookService} from '../../services/book.service';
-import {BookDataSource} from '../../datasources/book-data-source.service';
-import {DatasourceOptions} from '../../models/datasource-options';
+import {BookService} from '../../../services/book.service';
+import {BookDataSource} from '../../../datasources/book-data-source.service';
+import {DatasourceOptions} from '../../../models/datasource-options';
 import {ActivatedRoute, Router} from '@angular/router';
 import {query} from '@angular/animations';
-import {Author} from '../../models/author';
+import {Author} from '../../../models/author';
 
 @Component({
   selector: 'app-book-card',

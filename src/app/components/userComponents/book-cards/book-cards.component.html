@@ -2,7 +2,7 @@
   <h1 *ngIf="authorName === undefined; else elseBlock">Books</h1>
   <ng-template #elseBlock><h1>Books by <i>{{authorName}}</i></h1></ng-template>
   <mat-grid-tile *ngFor="let book of books | async">
-    <img src="../../../assets/jpg/bookCover.jpg" alt="Book Cover">
+    <img src="../../../../assets/jpg/bookCover.jpg" alt="Book Cover">
     <mat-grid-tile-header><span>{{book.title}}</span></mat-grid-tile-header>
     <mat-grid-tile-footer>
       <span>{{book.price}}€</span>

@@ -3,9 +3,9 @@ import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Route
 import { Observable } from 'rxjs';
 import {OktaAuthService} from '@okta/okta-angular';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {UnauthorizedComponent} from './components/unauthorized/unauthorized.component';
+import {UnauthorizedComponent} from './components/popups/unauthorized/unauthorized.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {AuthorizedComponent} from './components/authorized/authorized.component';
+import {AuthorizedComponent} from './components/popups/authorized/authorized.component';
 
 @Injectable({
   providedIn: 'root'

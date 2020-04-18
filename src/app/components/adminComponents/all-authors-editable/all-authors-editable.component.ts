@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthorDataSource} from '../../datasources/author-data-source.service';
-import {AuthorService} from '../../services/author.service';
-import {Author} from '../../models/author';
+import {AuthorDataSource} from '../../../datasources/author-data-source.service';
+import {AuthorService} from '../../../services/author.service';
+import {Author} from '../../../models/author';
 
 @Component({
   selector: 'app-all-authors-editable',
