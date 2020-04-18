@@ -27,8 +27,14 @@ export class AllAuthorsComponent implements OnInit {
   }
 
   onRowClicked(row) {
-    console.log('Row clicked: ', row);
-    this.router.navigate(['/authors/author'], { queryParams: { autnr: row.autnr.toString()}});
+    this.router.navigate(
+      ['/authors/author'],
+        { queryParams: {
+          autnr: row.autnr.toString(),
+          authorName: row.firstname + ' ' + row.familyname
+        }
+      }
+    );
   }
 }
 
