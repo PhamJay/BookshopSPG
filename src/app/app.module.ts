@@ -32,6 +32,7 @@ import { SatPopoverModule } from '@ncstate/sat-popover';
 import { EditComponent } from './components/edit/edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { AllAuthorsEditableComponent } from './components/all-authors-editable/all-authors-editable.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatInputModule} from '@angular/material/input';
     AuthorizedComponent,
     PageNotFoundComponent,
     AdminComponent,
-    EditComponent
+    EditComponent,
+    AllAuthorsEditableComponent
   ],
   imports: [
     BrowserModule,

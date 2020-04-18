@@ -12,20 +12,11 @@ import {Author} from '../../models/author';
 export class AdminComponent implements OnInit {
 
   step = 0;
-  displayedColumns: string[] = ['autnr', 'firstname', 'familyname'];
-  authorDataSource = new AuthorDataSource(this.authorService);
 
-  constructor(private authorService: AuthorService, private router: Router) {
+  constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  updateAuthorFirstname(author: Author, input: string) {
-    if (input == null) { return; }
-
-    author.firstname = input;
-    this.authorDataSource.update(author);
   }
 
   // For Expansion Panel

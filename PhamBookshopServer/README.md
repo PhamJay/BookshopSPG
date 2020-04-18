@@ -17,7 +17,7 @@ The following endpoints are implemented:
 
 ## Setup
 
-You will need to host a MSSQL Database, execute the script found in `BookshopMSSQL.sql`, and then create an file called `.env` for configuring the hapi server and database connection.
+You will need to host a MSSQL Database, execute the script found in `BookshopMSSQL.sql`, and then create an file called `.env` for configuring the hapi server and database connection. Create this file in the root-dirctory of PhamBookshopServer.
 
 ### Example .env file:
 
@@ -37,4 +37,9 @@ SQL_PASSWORD=password
 SQL_DATABASE=bookshop
 SQL_SERVER=DESKTOP-NOUVFVD
 SQL_ENCRYPT=false
+
+OKTA_ORG_URL=https://dev-589202.okta.com
+OKTA_CLIENT_ID=0oa96ekx9k6DuxOna4x6
+OKTA_CLIENT_SECRET=0XQN_HcTSuXZy49AJPi0YuePw_x4VaLhb6nIyiR8
+
 ```
