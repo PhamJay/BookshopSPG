@@ -19,6 +19,10 @@ span{
   line-height: calc(1em + (1.5 - 1) * ((100vw - 300px)/(1600 - 300)));
 }
 
+.mat-grid-tile .mat-grid-tile-header > *{
+  font-style: italic;
+}
+
 i{
   color: $primary;
 }
