@@ -20,6 +20,10 @@ export class BookDataSource extends DataSource<any> {
     return this.bookService.getBooks();
   }
 
+  update(book: Book) {
+    this.bookService.updateBook(book);
+  }
+
   disconnect(collectionViewer: CollectionViewer): void {
   }
 }

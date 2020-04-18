@@ -1,8 +1,9 @@
 import {Inject, Injectable, Optional} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Book} from '../models/book';
 import {DatasourceOptions} from '../models/datasource-options';
+import {Author} from '../models/author';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,24 @@ export class BookService {
   }
   private getBookByAutnr(autnr: string): Observable<Book[]> {
     return this.http.get<Book[]>(this.serviceUrl + '?autnr=' + autnr);
+  }
+
+  updateBook(book: Book): Observable<Book[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    const postBook = new Book();
+    postBook.autnr = book.autnr;
+    postBook.title = book.title;
+    postBook.price = book.price;
+
+    const post = this.http.post<Author[]>(
+      this.serviceUrl + '?isbn=' + book.isbn,
+      JSON.stringify(postBook),
+      httpOptions).subscribe();
+    return this.getAllBooks();
   }
 }

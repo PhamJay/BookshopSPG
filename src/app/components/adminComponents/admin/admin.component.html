@@ -5,7 +5,7 @@
         Edit Authors
       </mat-panel-title>
       <mat-panel-description>
-        Click on a Firstname or Familyname to edit
+        Click on a colored field to edit
       </mat-panel-description>
     </mat-expansion-panel-header>
 
@@ -18,12 +18,13 @@
       <mat-panel-title>
         Edit Books
       </mat-panel-title>
+      <mat-panel-description>
+        Click on a colored field to edit
+      </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
-    </mat-action-row>
+    <app-all-books-editable></app-all-books-editable>
+
   </mat-expansion-panel>
 
 </mat-accordion>
