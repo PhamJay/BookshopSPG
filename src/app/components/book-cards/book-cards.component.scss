@@ -10,9 +10,13 @@ img{
 .mat-grid-tile-footer{
   justify-content: space-between;
 }
+.mat-grid-tile-header{
+  min-height: 40px;
+  height: min-content !important;
+}
 span{
-  font-size: 1.3vw !important;
-  line-height: 1.5vw;
+  font-size: calc(12px + (20 - 12) * ((100vw - 300px) / (1600 - 300))) !important;
+  line-height: calc(1em + (1.5 - 1) * ((100vw - 300px)/(1600 - 300)));
 }
 
 i{
