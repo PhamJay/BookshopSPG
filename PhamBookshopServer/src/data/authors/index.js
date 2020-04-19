@@ -46,10 +46,9 @@ const registerAuthors = async ( { sql, getConnection } ) => {
         return request.query( sqlQueries.updateAuthor );
     };
 
-    const addAuthor = async ( { autnr, firstname, familyname } ) => {
+    const addAuthor = async ( { firstname, familyname } ) => {
         const cnx = await getConnection();
         const request = await cnx.request();
-        request.input( "autnr", sql.Int, autnr);
         request.input( "firstname", sql.VarChar( 255 ), firstname );
         request.input( "familyname", sql.VarChar( 255 ), familyname );
         return request.query( sqlQueries.addAuthor );

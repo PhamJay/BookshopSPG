@@ -26,7 +26,17 @@ The following endpoints are implemented:
 * GET all books of an author, by autnr **api/books?autnr={autnr}**
 * POST: Update Book **api/books**?isbn={isbn}
 
-Note: For POST-Update-Statements, ALL attributes except the primary key have to be sent in the request-body via json. 
+### Orders
+
+* GET all orders **api/orders**
+* GET order by Ordernr **api/orders?ordernr={ordernr}**
+* GET books of order **api/orders/books?ordernr={ordernr}**
+* POST: Add Order **api/orders**
+* POST: Update Order **api/orders?ordernr={ordernr}**
+* POST: Add Book to Order **api/orders?ordernr={ordernr}&isbn={isbn}**
+* DELETE order **api/orders?ordernr={ordernr}**
+
+Note: For Update- or Add-Statements, ALL attributes except the primary key have to be sent in the request-body via json. 
 
 ## Setup
 

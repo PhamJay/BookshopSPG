@@ -54,7 +54,7 @@ INSERT INTO book ([isbn], [autnr], [title], [price]) VALUES
 
 CREATE TABLE "order" (
   [ordernr] int CHECK ([ordernr] > 0) NOT NULL IDENTITY,
-  [username] varchar(20) NOT NULL,
+  [username] varchar(255) NOT NULL,
   [ordertime] datetime2(0) NOT NULL,
   [delivery] datetime2(0) DEFAULT NULL,
   PRIMARY KEY ([ordernr])

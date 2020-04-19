@@ -4,6 +4,7 @@
 
 const authors = require( "./authors" );
 const books = require( "./books" );
+const orders = require( "./orders");
 const sql = require( "mssql" );
 
 const client = async ( server, config ) => {
@@ -56,7 +57,8 @@ const client = async ( server, config ) => {
     // of the application
     return {
         authors: await authors.registerAuthors( { sql, getConnection } ),
-        books: await books.registerBooks( { sql, getConnection } )
+        books: await books.registerBooks( { sql, getConnection } ),
+        orders: await orders.registerOrders({ sql, getConnection })
     };
 };
 

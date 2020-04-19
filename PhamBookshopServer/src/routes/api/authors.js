@@ -52,8 +52,8 @@ module.exports.register = async server => {
                       return res.recordset;
                     }
                     else {
-                      const {autnr, firstname, familyname} = request.payload;
-                      const res = await db.authors.addAuthor({autnr, firstname, familyname});
+                      const {firstname, familyname} = request.payload;
+                      const res = await db.authors.addAuthor({firstname, familyname});
                       return res.recordset;
                     }
                 } catch ( err ) {
