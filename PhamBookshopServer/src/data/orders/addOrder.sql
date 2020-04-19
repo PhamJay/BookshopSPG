@@ -12,6 +12,6 @@ VALUES
 
 )
 
-SELECT  *
-FROM    [dbo].[order]
-WHERE   [ordernr] = @ordernr
+select *
+from [dbo].[order]
+where username = @username AND ordertime = @ordertime AND delivery = @delivery

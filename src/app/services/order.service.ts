@@ -4,6 +4,8 @@ import {DatasourceOptions} from '../models/datasource-options';
 import {Observable} from 'rxjs';
 import {Order} from '../models/order';
 import {Author} from '../models/author';
+import {Book} from '../models/book';
+import {catchError, map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,38 @@ export class OrderService {
     del.subscribe();
     return del;
   }
-  private getOrderByAutnr(autnr: string): Observable<Order[]> {
-    return this.http.get<Order[]>(this.serviceUrl + '?autnr=' + autnr);
+
+  public async addOrder(books: Book[], username: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    const ordertime = new Date();
+    const delivery = new Date();
+    delivery.setDate(ordertime.getDate() + 7);
+
+    const postOrder = new Order();
+    postOrder.ordertime = ordertime;
+    postOrder.delivery = delivery;
+    postOrder.username = username;
+
+    let _ordernr: number;
+
+    const post = await this.http.post<any>(
+      this.serviceUrl,
+      JSON.stringify(postOrder),
+      httpOptions).pipe(map(data => {
+      _ordernr = data[0].ordernr;
+    })).subscribe(res => {
+      for (const book of books) {
+        const bookPost = this.http.post(
+          this.serviceUrl + '?ordernr=' + _ordernr + '&isbn=' + book.isbn,
+          null
+        ).subscribe();
+      }
+    });
   }
+
 }

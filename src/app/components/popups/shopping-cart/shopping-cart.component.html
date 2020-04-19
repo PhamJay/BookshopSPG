@@ -1,0 +1,23 @@
+<mat-card class="shopping-cart" *ngIf="cartItems && cartItems.length > 0">
+  <ul>
+    <li *ngFor="let item of cartItems">
+      <div id = "itemContainer">
+        <span>{{item.title}}</span>
+        <div>
+          <span style="margin-left: 1em;">{{item.price  | currency:'EUR'}}</span>
+          <button mat-icon-button (click)="removeBook(item.isbn)">
+            <mat-icon>remove_shopping_cart</mat-icon>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div id = cartTotal>
+    <button mat-stroked-button (click)="emptyCart()">Empty Cart</button>
+    <button mat-stroked-button (click)="checkout()">Checkout</button>
+    <div>
+      <strong>Total:</strong>
+      <span style="margin-right: 1em;">{{totalAmount | currency:'EUR'}}</span>
+    </div>
+  </div>
+</mat-card>

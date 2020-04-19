@@ -3,8 +3,7 @@ import {BookService} from '../../../services/book.service';
 import {BookDataSource} from '../../../datasources/book-data-source.service';
 import {DatasourceOptions} from '../../../models/datasource-options';
 import {ActivatedRoute, Router} from '@angular/router';
-import {query} from '@angular/animations';
-import {Author} from '../../../models/author';
+import {CartService} from '../../../services/cart.service';
 
 @Component({
   selector: 'app-book-card',
@@ -13,11 +12,12 @@ import {Author} from '../../../models/author';
 })
 export class BookCardsComponent implements OnInit {
 
+  @Input() cartItems: any = [];
   books: any;
   options = new DatasourceOptions();
   authorName: string;
 
-  constructor(private bookService: BookService, private activeRoute: ActivatedRoute, ) {
+  constructor(private bookService: BookService, private cartService: CartService, private activeRoute: ActivatedRoute, ) {
   }
 
   ngOnInit(): void {
@@ -35,12 +35,16 @@ export class BookCardsComponent implements OnInit {
         this.bookService.options = undefined;
     }
 
-    // if (this.author.fullname === undefined) {
-    //   this.author.fullname = undefined;
-    // }
-
+    // Subscribe to Books
     const dataSource = new BookDataSource(this.bookService);
     this.books = dataSource.connect();
+
+    // Subscribe to shopping cart
+    const cartItems = this.cartService.getBooks().subscribe();
+  }
+
+  addToCart(book) {
+    this.cartService.addBookToCart(book);
   }
 
 }
