@@ -40,9 +40,7 @@ Note: For Update- or Add-Statements, ALL attributes except the primary key have 
 
 ## Setup
 
-
-
-You will need to host a MSSQL Database, execute the script found in `BookshopMSSQL.sql`, and then create an file called `.env` for configuring the hapi server and database connection. Create this file in the root-dirctory of PhamBookshopServer.
+You will need to host a MSSQL Database, execute the script found in `BookshopMSSQL.sql`, and then create a file called `.env` for configuring the hapi server, okta, and database connection. Create this file in the root-dirctory of PhamBookshopServer. The okta-configuration params should not be modified.
 
 ### Example .env file:
 
