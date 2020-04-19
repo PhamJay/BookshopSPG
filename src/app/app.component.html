@@ -1,7 +1,8 @@
 <mat-toolbar color = primary id="header">
-  <button mat-stroked-button routerLink="/">Jay's Bookshop</button>
+  <button mat-raised-button routerLink="/">Jay's Bookshop</button>
   <div style="display: flex">
-    <button mat-stroked-button routerLink="/admin"> Admin </button>
+    <span *ngIf="name" id = name>Logged in as: {{name}}</span>
+    <button style="margin-left: 1vw" mat-stroked-button routerLink="/admin"> Admin</button>
     <div style="margin-left: 0.5vw">
       <button mat-stroked-button *ngIf="!isAuthenticated" routerLink="/login"> Login </button>
       <button mat-stroked-button *ngIf="isAuthenticated" (click)="logout()"> Logout </button>

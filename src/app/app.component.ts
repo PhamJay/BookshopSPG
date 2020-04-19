@@ -9,6 +9,7 @@ import { OktaAuthService } from '@okta/okta-angular';
 export class AppComponent implements OnInit {
   title = 'PhamBookshop';
   isAuthenticated: boolean;
+  name: string;
 
   constructor(public oktaAuth: OktaAuthService) {
     this.oktaAuth.$authenticationState.subscribe(
@@ -17,12 +18,19 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.oktaAuth.isAuthenticated().then((auth) => {
+    this.oktaAuth.isAuthenticated().then(async (auth) => {
       this.isAuthenticated = auth;
+      const claims = await this.oktaAuth.getUser();
+      if (claims) {
+        this.name = claims.firstname + ' ' + claims.lastname;
+      } else {
+        this.name = undefined;
+      }
     });
   }
 
   logout() {
     this.oktaAuth.logout('/');
+    this.name = undefined;
   }
 }

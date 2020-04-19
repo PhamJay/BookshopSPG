@@ -22,12 +22,12 @@ export class OktaAuthGuard implements CanActivate {
     if (authenticated) {
       const userClaims = await this.okta.getUser();
       if (userClaims.admin) {
-        this.snackbar.openFromComponent(AuthorizedComponent, {duration: 5000});
+        this.snackbar.openFromComponent(AuthorizedComponent, {duration: 5000, data: userClaims});
         return true;
       } else {
         const dialogRef = this.dialog.open(
           UnauthorizedComponent, {
-          data: userClaims.email
+          data: userClaims.firstname
         });
         return false;
       }

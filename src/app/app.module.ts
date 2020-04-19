@@ -17,7 +17,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { OktaAuthModule } from '@okta/okta-angular';
-import { LoginComponent } from './components/userComponents/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
 import { UnauthorizedComponent } from './components/popups/unauthorized/unauthorized.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -40,7 +39,6 @@ import { AllBooksEditableComponent } from './components/adminComponents/all-book
     AppComponent,
     AllAuthorsComponent,
     BookCardsComponent,
-    LoginComponent,
     UnauthorizedComponent,
     AuthorComponent,
     AuthorizedComponent,
