@@ -1,6 +1,5 @@
 import {Inject, Injectable, Input, Optional} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Author} from '../models/author';
 import {BookService} from '../services/book.service';
 import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {Book} from '../models/book';

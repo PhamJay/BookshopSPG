@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NameResolver } from './name-resolver.service';
+import { OrderService } from './order.service';
 
-describe('NameResolver', () => {
-  let service: NameResolver;
+describe('OrderService', () => {
+  let service: OrderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NameResolver);
+    service = TestBed.inject(OrderService);
   });
 
   it('should be created', () => {

@@ -1,5 +1,20 @@
 <mat-accordion class="example-headers-align">
+
   <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Orders
+      </mat-panel-title>
+      <mat-panel-description>
+        Click on a order-number to delete (page needs to be reloaded!)
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-all-orders></app-all-orders>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
         Edit Authors
@@ -13,7 +28,7 @@
 
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
         Edit Books

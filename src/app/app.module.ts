@@ -33,6 +33,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { AllAuthorsEditableComponent } from './components/adminComponents/all-authors-editable/all-authors-editable.component';
 import { AllBooksEditableComponent } from './components/adminComponents/all-books-editable/all-books-editable.component';
+import { AllOrdersComponent } from './components/adminComponents/all-orders/all-orders.component';
+import { DeleteComponent } from './components/popups/delete/delete.component';
+import { ShoppingCartComponent } from './components/popups/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { AllBooksEditableComponent } from './components/adminComponents/all-book
     AdminComponent,
     EditComponent,
     AllAuthorsEditableComponent,
-    AllBooksEditableComponent
+    AllBooksEditableComponent,
+    AllOrdersComponent,
+    DeleteComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
