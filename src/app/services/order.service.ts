@@ -22,7 +22,9 @@ export class OrderService {
     return this.http.get<Order[]>(this.serviceUrl);
   }
   public deleteOrder(id: string): Observable<Order[]> {
-    return this.http.delete<Order[]>(this.serviceUrl + '?ordernr=' + id).subscribe();
+    const del = this.http.delete<Order[]>(this.serviceUrl + '?ordernr=' + id);
+    del.subscribe();
+    return del;
   }
   private getOrderByAutnr(autnr: string): Observable<Order[]> {
     return this.http.get<Order[]>(this.serviceUrl + '?autnr=' + autnr);
