@@ -36,6 +36,7 @@ import { AllBooksEditableComponent } from './components/adminComponents/all-book
 import { AllOrdersComponent } from './components/adminComponents/all-orders/all-orders.component';
 import { DeleteComponent } from './components/popups/delete/delete.component';
 import { ShoppingCartComponent } from './components/popups/shopping-cart/shopping-cart.component';
+import { CheckoutSnackbarComponent } from './components/popups/checkout-snackbar/checkout-snackbar.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ShoppingCartComponent } from './components/popups/shopping-cart/shoppin
     AllBooksEditableComponent,
     AllOrdersComponent,
     DeleteComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CheckoutSnackbarComponent
   ],
   imports: [
     BrowserModule,
